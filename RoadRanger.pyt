@@ -396,7 +396,8 @@ class ValidateRoadRanges:
         # ------------------------------------------------------------------
         messages.addMessage("Reading road segments...")
 
-        road_fields   = ["OBJECTID", name_fld, fL_fld, tL_fld,
+        # "OID@" is an ArcPy token that resolves to the correct OID field
+        road_fields   = ["OID@", name_fld, fL_fld, tL_fld,
                          fR_fld, tR_fld, "SHAPE@"]
         streets       = {}   # street_key -> [segment tuples]
         segment_data  = {}   # oid -> attribute dict
